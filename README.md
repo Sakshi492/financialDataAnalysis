@@ -19,7 +19,3 @@
 
 
 > *Set flag as `dev` for Development Environment & `prod` for Production.
-
-
-# -Powered By-
- <img src="http://ax.vacau.com/temp-root/images/reactpackage.png" height="140">

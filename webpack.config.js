@@ -10,7 +10,7 @@ module.exports = function(env) {
   const isDevEnv = env.NODE_ENV === "development";
   // const creds = isDevEnv ? credsDev : credsProd;
   const isBuild = env.PROCESS.includes("build");
-  const port = 3001;
+  const port = 3002;
 
   console.log(
     `🔥 Running Node Tasks on ${
