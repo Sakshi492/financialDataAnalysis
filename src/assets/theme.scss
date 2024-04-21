@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
+
+// Color constants
+$bg-color: #1b1b1b;
+$bg-color-dark: #010111;
+$color-ide: #010101;
+$color-orange: #fc6e20;
+$color-beige: #ffe7d0;
+$color-grey: #515152;
+$color-black: #000000;
+
+// Shadow constants
+$orange-color-shadow: rgba(252, 110, 32, 0.1);
+$beige-color-shadow-light: rgba(255, 231, 208, 0.1);
+$grey-color-shadow: rgba(81, 81, 82, 0.2);
+$bg-color-shadow: rgba(27, 27, 27, 0.7);
+$bg-color-shadow-dark: rgba(27, 27, 27, 0.9);
+$hover-shadow-black: 0px 0px 28px 2px rgba(0, 0, 0, 0.45);
+
+// Breakpoint constants
+$width-extra-large: 1440px;
+$width-large: 1200px;
+$width-medium: 992px;
+$width-small: 786px;
+$width-extra-small: 576px;
+$width-mini: 420px;
+$width-micro: 330px;

@@ -1,0 +1,43 @@
+@import '../../../assets/theme.scss';
+
+.homepage-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 0;
+  .landing-content {
+    padding: 0 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60%;
+  }
+}
+
+@media screen and (max-width: $width-large) {
+  .homepage-container .landing-content {
+    padding: 0 7%;
+  }
+}
+
+@media screen and (max-width: $width-medium) {
+}
+
+@media screen and (max-width: $width-small) {
+  .homepage-container .landing-content {
+    transform: translateY(10%);
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: 90%;
+  }
+}
+
+@media screen and (max-width: $width-extra-small) {
+}
+
+@media screen and (max-width: $width-mini) {
+}
+
+@media screen and (max-width: $width-micro) {
+}

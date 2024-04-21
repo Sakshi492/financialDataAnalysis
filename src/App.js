@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.scss';
+import RouterData from './assets/routerData';
+import NavBar from './components/navBar/navBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+  }
+
+  componentDidMount() {
+    console.log(
+      `%cFinancial Data Analysis - sakshiagarwal.dev %crunning on local environment`,
+      'font-weight: bold; font-size: 30px;color: #ffe7d0;',
+      'color: #fc6e20; font-weight: bold; padding: 20px 5px; font-size: 13px; '
+    );
+  }
+
+  render() {
+    return (
+      <div className="app-container">
+        <div className="App">
+          <NavBar />
+          <RouterData />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

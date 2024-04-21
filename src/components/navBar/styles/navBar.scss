@@ -1,0 +1,162 @@
+@import '../../../assets/theme.scss';
+
+.navbar {
+  .navbar-container {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    position: absolute;
+    width: 90%;
+    height: 80px;
+    overflow: hidden;
+    padding: 0 5%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .navbar-logo {
+      .logo-img {
+        padding-top: 0.5rem;
+        height: 6rem;
+        width: 8rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+    .nav-link-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      .nav-link {
+        padding: 2rem;
+        color: $color-beige;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        &:hover {
+          cursor: pointer;
+          filter: drop-shadow(0px 0px 0.5px $color-orange);
+          border-bottom: 2px solid $color-orange;
+          background-color: $beige-color-shadow-light;
+          .nav-link {
+            filter: drop-shadow(0px 0px 0.5px $color-orange);
+          }
+        }
+      }
+    }
+    .nav-right-section {
+      padding: 2rem 1rem;
+      font-weight: bold;
+      font-size: 16px;
+      .nav-contact-btn {
+        color: $color-beige;
+        text-decoration: none;
+      }
+      .mobile-nav-btn {
+        display: none;
+        content: '';
+        height: 3rem;
+        width: 3rem;
+        background-size: 3rem;
+        transform: translate(1rem, -1.2rem);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='18' viewBox='0 0 18 18' width='18'%3E%3Cdefs%3E%3Cstyle%3E .fill %7B fill: %23fc6e20; %7D %3C/style%3E%3C/defs%3E%3Ctitle%3ES Rail 18 N%3C/title%3E%3Crect id='Canvas' fill='%23ff13dc' opacity='0' width='18' height='18' /%3E%3Crect class='fill' height='2' rx='0.5' width='12' x='3' y='4' /%3E%3Crect class='fill' height='2' rx='0.5' width='12' x='3' y='8' /%3E%3Crect class='fill' height='2' rx='0.5' width='12' x='3' y='12' /%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: $color-beige;
+        .nav-contact-btn {
+          color: $color-orange;
+          filter: drop-shadow(0px 0px 0.5px $color-orange);
+        }
+      }
+    }
+  }
+  .mobile-drawer {
+    display: none;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: $color-orange;
+    z-index: 10;
+    &.open {
+      display: flex;
+    }
+    .nav-list {
+      display: flex;
+      flex-direction: column;
+      .nav-link {
+        padding: 1.5rem 5rem;
+        color: $color-beige;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        &:after {
+          content: '';
+          background-image: url('../../../assets/arrow_beige.png');
+          height: 20px;
+          width: 20px;
+          background-size: 20px;
+          background-position: center;
+          background-repeat: no-repeat;
+          padding: 1rem;
+        }
+      }
+    }
+    .close-ctr {
+      .close-button {
+        height: 2rem;
+        width: 2rem;
+        background-size: 2rem;
+        position: absolute;
+        top: 2.5rem;
+        right: 2.5rem;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='18' viewBox='0 0 18 18' width='18'%3E%3Cdefs%3E%3Cstyle%3E .fill %7B fill: %231b1b1b; %7D %3C/style%3E%3C/defs%3E%3Ctitle%3ES Close 18 N%3C/title%3E%3Crect id='Canvas' fill='%23ff13dc' opacity='0' width='18' height='18' /%3E%3Cpath class='fill' d='M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z' /%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $width-medium) {
+  .navbar .navbar-container {
+    .navbar-logo .logo-img {
+      padding-top: 1rem;
+      height: 4.5rem;
+      width: 6rem;
+    }
+    .nav-link-list .nav-link {
+      font-size: 14px;
+    }
+    .nav-right-section {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: $width-small) {
+  .navbar .navbar-container {
+    .nav-link-list {
+      display: none;
+    }
+    .nav-right-section {
+      .nav-contact-btn {
+        display: none;
+      }
+      .mobile-nav-btn {
+        display: block;
+      }
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
