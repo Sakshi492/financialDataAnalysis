@@ -1,0 +1,18 @@
+@import '../../../../assets/theme.scss';
+
+.homepage-controls-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  // transform: translate(0, -2rem);
+  .controls-header {
+    color: $color-orange;
+    font-weight: bold;
+    font-size: 21px;
+  }
+  .correlation-definition {
+    font-size: 18px;
+    color: $color-beige;
+    transform: translate(0, -4rem);
+  }
+}

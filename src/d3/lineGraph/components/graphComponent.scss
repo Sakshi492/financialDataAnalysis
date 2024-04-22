@@ -1,0 +1,42 @@
+@import './../../../assets/theme.scss';
+
+.graph-component {
+  transform: translate(15%, -5rem);
+  .y-axis-label {
+    transform: translate(-17rem, 17.4rem) rotate(-90deg);
+    fill: $color-orange;
+  }
+  .x-axis-label {
+    transform: translate(4.5rem, 0.5rem);
+    fill: $color-orange;
+  }
+  .x-axis-arrow {
+    transform: translate(-2rem, 27.4rem) rotate(-90deg);
+  }
+  .y-axis-arrow {
+    transform: translate(9.9rem, 22rem) rotate(-180deg);
+  }
+  .svg-x-axis {
+    .tick {
+      line {
+        stroke: $color-beige;
+      }
+      text {
+        stroke: $color-beige;
+      }
+    }
+  }
+  .svg-y-axis {
+    .tick {
+      line {
+        stroke: $color-beige;
+      }
+      text {
+        stroke: $color-beige;
+      }
+    }
+  }
+  .legend {
+    transform: translate(2rem, -0.5rem);
+  }
+}

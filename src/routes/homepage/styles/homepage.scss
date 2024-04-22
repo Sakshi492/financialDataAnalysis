@@ -1,17 +1,32 @@
 @import '../../../assets/theme.scss';
 
 .homepage-container {
-  height: 100%;
+  height: calc(100% - 4rem);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 100px 0;
-  .landing-content {
-    padding: 0 10%;
+  justify-content: start;
+  padding: 2rem;
+  .homepage-header {
+    color: $color-orange;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 28px;
+  }
+  .homepage-content {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    height: 60%;
+    .homepage-controls {
+      width: 25%;
+    }
+    .homepage-visual {
+      width: 75%;
+      padding: 1rem 0;
+      .homepage-subheader {
+        color: $color-beige;
+        font-weight: bold;
+      }
+    }
   }
 }
 

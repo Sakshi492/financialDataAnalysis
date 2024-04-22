@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import RouterData from './assets/routerData';
-import NavBar from './components/navBar/navBar';
+// import NavBar from './components/navBar/navBar';
 
 class App extends React.Component {
   constructor() {
@@ -20,7 +20,7 @@ class App extends React.Component {
     return (
       <div className="app-container">
         <div className="App">
-          <NavBar />
+          {/* <NavBar /> */}
           <RouterData />
         </div>
       </div>

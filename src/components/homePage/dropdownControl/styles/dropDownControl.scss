@@ -1,0 +1,42 @@
+@import '../../../../assets/theme.scss';
+
+.dropdown-control {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  .dropdown-control-header {
+    color: $color-beige;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .dropdown-control-container {
+    border: 1px solid $color-orange;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid $color-beige;
+      .select__dropdown-indicator {
+        color: $color-beige;
+      }
+      .select__indicator-separator {
+        background-color: $color-beige;
+      }
+    }
+    .select__single-value {
+      color: $color-orange;
+    }
+    .select__control {
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+    .select__indicator-separator {
+      background-color: $color-orange;
+    }
+    .select__dropdown-indicator {
+      color: $color-orange;
+      &:hover {
+        color: $color-beige;
+      }
+    }
+  }
+}
