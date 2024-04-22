@@ -30,8 +30,8 @@ module.exports = function(env) {
       title: "sakshiagarwal.dev",
       template: "index.html",
       filename: "index.html",
-      favicon: "favicon.ico",
-    }),
+      favicon: "favicon.ico"
+    })
   ];
 
   var buildPlugins = [
@@ -69,55 +69,55 @@ module.exports = function(env) {
       historyApiFallback: true,
       https: false,
       headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
+        "Access-Control-Allow-Origin": "*"
+      }
     },
     output: {
       path: path.resolve(__dirname, "build"),
       filename: "[name].[contenthash].js",
-      publicPath: "/",
+      publicPath: "/"
     },
     module: {
       rules: [
         {
           test: /\.js$/,
-          loader: "babel-loader",
+          loader: "babel-loader"
         },
         {
           test: /\.html$/,
-          loader: "html-loader",
+          loader: "html-loader"
         },
         {
           test: /\.(css)$/,
-          use: ["style-loader", "css-loader?importLoaders=2"],
+          use: ["style-loader", "css-loader?importLoaders=2"]
         },
         {
           test: /\.(png|svg|jpg|gif|ttf|jpeg)/,
-          loader: "file-loader",
+          loader: "file-loader"
         },
         {
           test: /\.(woff2?)$/,
-          loader: "file-loader",
+          loader: "file-loader"
         },
         {
           test: /\.(otf|pdf)$/,
-          loader: "file-loader",
+          loader: "file-loader"
         },
         {
           test: /\.scss$/,
           use: [
             {
-              loader: "style-loader",
+              loader: "style-loader"
             },
             {
-              loader: "css-loader",
+              loader: "css-loader"
             },
             {
-              loader: "sass-loader",
-            },
-          ],
-        },
-      ],
+              loader: "sass-loader"
+            }
+          ]
+        }
+      ]
     },
     plugins: plugins,
     optimization: {
@@ -127,11 +127,11 @@ module.exports = function(env) {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: "vendors",
-            chunks: "all",
-          },
-        },
-      },
-    },
+            chunks: "all"
+          }
+        }
+      }
+    }
   };
 
   return config;
