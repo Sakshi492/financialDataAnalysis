@@ -373,7 +373,7 @@ export default function TradingVolumePage() {
               height={400}
               tooltipTransform={'translate(-19rem, -20rem)'}
               onBubbleClick={handleBubbleClick}
-              color={'#ee5138'}
+              color={'#AC133C'}
               hoverColor={'#ffe7d0'}
             />
           </div>
