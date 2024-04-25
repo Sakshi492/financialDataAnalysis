@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import "./styles/acknowledgementPage.scss";
+import './styles/acknowledgementPage.scss';
 import HOMEPAGE_LITERALS from '../../constants/homepage';
 
 export default function AcknowledgementPage() {
