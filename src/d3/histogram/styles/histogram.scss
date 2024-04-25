@@ -1,4 +1,4 @@
-@import './../../assets/theme.scss';
+@import '../../../assets/theme.scss';
 
 .histogram-component {
   width: calc(100% - 1.5rem);
@@ -22,7 +22,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    transform: translate(4.5rem, 6rem) rotate(-90deg);
+    transform: translate(5.3rem, 6rem) rotate(-90deg);
     color: $color-orange;
     display: none;
     &::after {
@@ -36,7 +36,7 @@
 @media screen and (max-width: $width-large) {
   .histogram-component {
     .yAxisLabel {
-      transform: translate(5.5rem, 6rem) rotate(-90deg);
+      transform: translate(6rem, 6rem) rotate(-90deg);
     }
   }
 }
@@ -46,7 +46,7 @@
     width: calc(100% - 1rem);
     padding-left: 1rem;
     .yAxisLabel {
-      transform: translate(6.5rem, 6rem) rotate(-90deg);
+      transform: translate(7rem, 6rem) rotate(-90deg);
     }
   }
 }

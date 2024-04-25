@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import './histogram.scss';
+import './styles/histogram.scss';
 
 const Histogram = ({ data, givenWidth, givenHeight, xLabel, yLabel }) => {
   const svgRef = useRef();

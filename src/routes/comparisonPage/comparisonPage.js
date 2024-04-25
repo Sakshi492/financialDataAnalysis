@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './styles/comparisonPage.scss';
 import HOMEPAGE_LITERALS from '../../constants/homepage';
-import AnimatedLineGraph from '../../d3/lineGraph/components/graphComponent';
-import DropDownControl from '../../components/homePage/dropdownControl/dropDownControl';
+import AnimatedLineGraph from '../../d3/lineGraph/animatedLineGraph';
+import DropDownControl from '../../components/dropdownControl/dropDownControl';
 import calculateCorrelation from 'calculate-correlation';
 import COMPANY_DATA from '../../constants/companyData';
 import Gauge from '../../d3/gauge/gauge';

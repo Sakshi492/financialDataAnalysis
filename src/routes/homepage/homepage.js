@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './styles/homepage.scss';
 import HOMEPAGE_LITERALS from '../../constants/homepage';
 import { Link } from 'react-router-dom';
-import AnimatedLineGraph from '../../d3/lineGraph/components/graphComponent';
-import DropDownControl from '../../components/homePage/dropdownControl/dropDownControl';
+import AnimatedLineGraph from '../../d3/lineGraph/animatedLineGraph';
+import DropDownControl from '../../components/dropdownControl/dropDownControl';
 import COMPANY_DATA from '../../constants/companyData';
 import BubbleChart from '../../d3/bubbleChart/bubbleChart';
 import Histogram from '../../d3/histogram/histogram';
@@ -292,10 +292,9 @@ export default function HomePage() {
         </div>
       </div>
       {!selectedCompany.id && (
-        <div className="acknowledgement">
-          <div className="acknowledgement-header">Acknowledgement</div>
-          {HOMEPAGE_LITERALS.ACKNOWLEDGEMENT}
-        </div>
+        <Link to={`/acknowledgement`} className="acknowledgement">
+          Acknowledgement
+        </Link>
       )}
     </div>
   );

@@ -73,7 +73,61 @@ const HOMEPAGE_LITERALS = {
         value: 'day'
       }
     ]
-  }
+  },
+  ACKNOWLEDGEMENTS: [
+    {
+      header: 'Data Sources Used in this Project:',
+      points: [
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1'
+      ]
+    },
+    {
+      header: 'References used in Source Code:',
+      points: [
+        'Code source for Bubble Chart (Trading Volume) : https://d3-graph-gallery.com/graph/barplot_button_data_hard.html',
+        'Code source for Stream Graph (Trading Volume - Percentage Change) : https://d3-graph-gallery.com/streamgraph.html',
+        'Code source for Line Graph (Correlation & Data Analysis) : https://d3-graph-gallery.com/graph/line_basic.html',
+        'Code source for Bar Graph (Net Income) : https://d3-graph-gallery.com/barplot.html',
+        'Code source for Scale Linear (Correlation Meter) : https://d3js.org/d3-scale/linear'
+      ]
+    },
+    {
+      header: 'Data Processing : Financial Dataset',
+      points: [
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1'
+      ]
+    },
+    {
+      header: 'Data Processing : Net Revenue Dataset',
+      points: [
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1',
+        'Point 1'
+      ]
+    }
+  ]
 };
 
 export default HOMEPAGE_LITERALS;

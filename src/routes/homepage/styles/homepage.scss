@@ -11,22 +11,44 @@
     color: $color-orange;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 21px;
   }
   .visual-header {
     color: $color-beige;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
   }
   .acknowledgement {
-    font-size: 14px;
+    font-size: 16px;
     text-align: right;
+    position: absolute;
+    top: 6rem;
+    right: 2rem;
     padding-bottom: 2rem;
-    .acknowledgement-header {
-      color: $color-orange;
-      font-weight: bold;
+    color: $color-orange;
+    font-weight: bold;
+    width: fit-content;
+    background: transparent;
+    text-align: right;
+    text-decoration: none;
+    border-bottom: 1px solid $color-beige;
+    padding: 5px 8px;
+    color: $color-orange;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      border-bottom: 2px solid $color-orange;
+      color: $color-beige;
+      padding-bottom: 5px;
+      &::after {
+        color: $color-orange;
+      }
     }
-    color: $color-beige;
+    &::after {
+      content: ' → ';
+      color: $color-beige;
+      font-weight: bolder;
+    }
   }
   .homepage-content {
     width: 100%;
@@ -59,7 +81,7 @@
             width: 22%;
             transform: translate(0rem, 1rem);
             height: fit-content;
-            font-size: 14px;
+            font-size: 16px;
             gap: 1rem;
           }
           .visual-graph {
@@ -69,7 +91,7 @@
         .visual-header {
           color: $color-orange;
           font-weight: bold;
-          font-size: 16px;
+          font-size: 18px;
           transform: translate(0rem, 0rem);
           transition: all ease-in 0.2s;
           transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
@@ -86,7 +108,7 @@
               gap: 0.5rem;
               .legend-label {
                 color: $color-beige;
-                font-size: 14px;
+                font-size: 16px;
                 font-weight: normal;
               }
               .legend-color {
@@ -105,7 +127,7 @@
         .visual-description {
           color: $color-beige;
           width: fit-content;
-          font-size: 14px;
+          font-size: 16px;
           padding-bottom: 2rem;
           width: 60%;
         }
@@ -153,7 +175,7 @@
         .visual-header {
           color: $color-orange;
           font-weight: bold;
-          font-size: 16px;
+          font-size: 18px;
         }
         .visual-content {
           display: flex;
@@ -179,7 +201,7 @@
           }
           .visual-description {
             color: $color-beige;
-            font-size: 14px;
+            font-size: 16px;
             transition: all ease-in 0.2s;
             transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
           }
@@ -201,7 +223,7 @@
       font-size: 15px;
     }
     .acknowledgement {
-      font-size: 13px;
+      font-size: 14px;
       padding-bottom: 1.5rem;
     }
     .homepage-content {

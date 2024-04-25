@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BubbleChart from '../bubbleChart/bubbleChart';
-import './tradingVolumeVisualisation.scss';
+import './styles/tradingVolumeVisualisation.scss';
 
 const TradingVolumeVisualization = ({ data, color }) => {
   // State to track the current level of visualization

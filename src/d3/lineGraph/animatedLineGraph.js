@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import './graphComponent.scss';
+import './styles/animatedLineGraph.scss';
 
 const AnimatedLineGraph = ({
   data,

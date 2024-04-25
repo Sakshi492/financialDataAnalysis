@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import './style/streamGraph.scss';
+import './styles/streamGraph.scss';
 
 const StreamGraph = ({ data, width, height }) => {
   const svgRef = useRef();

@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import COMPANY_DATA from '../../constants/companyData';
 import HOMEPAGE_LITERALS from '../../constants/homepage';
 import './styles/tradingVolume.scss';
+import DropDownControl from '../../components/dropdownControl/dropDownControl';
 import BubbleChart from '../../d3/bubbleChart/bubbleChart';
-import DropDownControl from '../../components/homePage/dropdownControl/dropDownControl';
 import StreamGraph from '../../d3/streamGraph/streamGraph';
 
 export default function TradingVolumePage() {

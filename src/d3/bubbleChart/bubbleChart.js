@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import './bubbleChart.scss';
+import './styles/bubbleChart.scss';
 
 const BubbleChart = ({
   data,
