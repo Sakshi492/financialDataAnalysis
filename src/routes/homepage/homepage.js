@@ -60,7 +60,7 @@ export default function HomePage() {
         })
       },
       {
-        name: 'SNP Global Data',
+        name: 'S&P Global',
         color: '#515152',
         items: SNP_GLOBAL_DATA.map(data => {
           return {
@@ -226,7 +226,7 @@ export default function HomePage() {
                   givenWidth={'90%'}
                   givenHeight={'90%'}
                   xLabel={'Date'}
-                  yLabel={'Net Income'}
+                  yLabel={'Closing Price'}
                   hasQuarters={true}
                   hideAlternate={true}
                   customXAxisTickFormat={customXAxisTickFormat}
@@ -268,8 +268,8 @@ export default function HomePage() {
                 <div className="visual-graph">
                   <BubbleChart
                     data={getQ4Data()}
-                    width={300}
-                    height={300}
+                    width={250}
+                    height={250}
                     onBubbleClick={undefined}
                     color={selectedCompany.color}
                     hoverColor={'#ffe7d0'}
@@ -291,6 +291,12 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+      {!selectedCompany.id && (
+        <div className="acknowledgement">
+          <div className="acknowledgement-header">Acknowledgement</div>
+          {HOMEPAGE_LITERALS.ACKNOWLEDGEMENT}
+        </div>
+      )}
     </div>
   );
 }

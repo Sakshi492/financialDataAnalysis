@@ -7,10 +7,12 @@ const HOMEPAGE_LITERALS = {
   VISUAL_DESCRIPTION_2:
     'Assessing the impact of company-specific factors like profitability on stock performance provides insight into market dynamics and helps investors gauge investor sentiment toward particular companies or industries.',
   VISUAL_DESCRIPTION_4:
-    'Analyzing whether abnormal trading volume spikes coincide with significant market or company-specific events helps in identifying the catalysts behind these volume movements. Monitoring abnormal trading volume spikes helps in assessing and managing risk associated with specific stocks or the overall market. Sudden increases in trading volume may indicate heightened volatility or uncertainty, prompting investors to adjust their positions accordingly to mitigate potential losses.',
+    'Analyzing whether abnormal trading volume spikes coincide with significant market or company-specific events helps in identifying the catalysts behind these volume movements. Monitoring abnormal trading volume spikes helps in assessing and managing risk associated with specific stocks or the overall market.',
   VISUAL_HEADER_2:
     'Q3. Net Income vs Historical Stock Performance (Closing Price)',
   VISUAL_HEADER_3: 'Q4. Trading Volume Spikes',
+  ACKNOWLEDGEMENT:
+    'Analyzing whether abnormal trading volume spikes coincide with significant market or company-specific events helps in identifying the catalysts behind these volume movements. Monitoring abnormal trading volume spikes helps in assessing and managing risk associated with specific stocks or the overall market. Sudden increases in trading volume may indicate heightened volatility or uncertainty, prompting investors to adjust their positions accordingly to mitigate potential losses.',
   ANALYSE_BUTTON: 'See Interactive Analysis',
   COMPARE_BUTTON: 'Compare two Companies',
   DROPDOWN_STOCK: 'Select a company stock',
@@ -44,11 +46,11 @@ const HOMEPAGE_LITERALS = {
       'Correlation between any 2 stocks can range from -1 to +1. Understanding the correlation between stocks from different industries is crucial for diversifying investment portfolios. Stocks that have low or negative correlations tend to move independently of each other, providing better diversification benefits.'
   },
   TRADING: {
-    CONRTOL_HEADER: 'Impact of Trading Volume Spikes on Stock Price - ',
+    CONRTOL_HEADER: 'Q4. Impact of Trading Volume Spikes on Stock Price - ',
     AREA_CHART_DESC: 'Percentage Change in Stock Price',
     DROPDOWN: 'Select a grouping type :',
     DESCRIPTION:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      ' Analyzing whether abnormal trading volume spikes coincide with significant market or company-specific events helps in identifying the catalysts behind these volume movements. Monitoring abnormal trading volume spikes helps in assessing and managing risk associated with specific stocks or the overall market. Sudden increases in trading volume may indicate heightened volatility or uncertainty, prompting investors to adjust their positions accordingly to mitigate potential losses.',
     DROPDOWN_OPTIONS: [
       {
         label: 'Yearly Data',

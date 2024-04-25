@@ -329,6 +329,7 @@ export default function TradingVolumePage() {
         setCurrentData(getDailyData());
         setVisualType('day');
         setVisualLabel('Daily Data');
+        setTradingData(getTradingData());
         break;
       default:
     }
@@ -353,14 +354,6 @@ export default function TradingVolumePage() {
         HOMEPAGE_LITERALS.TRADING.CONRTOL_HEADER
       }${companyData.company_name} (${companyData.id.toUpperCase()})`}</div>
       <div className="trading-content">
-        <div className="trading-visual">
-          <div className="trading-control-description">
-            {HOMEPAGE_LITERALS.TRADING.DESCRIPTION}
-          </div>
-          <div className="trading-volume-graph">
-            <StreamGraph data={tradingData} width={500} height={400} />
-          </div>
-        </div>
         <div className="trading-control">
           <div className="control-container">
             <DropDownControl
@@ -376,13 +369,24 @@ export default function TradingVolumePage() {
           <div className="trading-volume-bubble">
             <BubbleChart
               data={currentData}
-              width={600}
-              height={600}
+              width={400}
+              height={400}
               tooltipTransform={'translate(-19rem, -20rem)'}
               onBubbleClick={handleBubbleClick}
               color={'#ee5138'}
               hoverColor={'#ffe7d0'}
             />
+          </div>
+        </div>
+        <div className="trading-visual">
+          <div className="trading-volume-graph">
+            <StreamGraph data={tradingData} width={400} height={400} />
+          </div>
+          <div className="trading-control-description">
+            <div className="trading-visual-header">
+              {HOMEPAGE_LITERALS.TRADING.AREA_CHART_DESC}
+            </div>
+            {HOMEPAGE_LITERALS.TRADING.DESCRIPTION}
           </div>
         </div>
       </div>

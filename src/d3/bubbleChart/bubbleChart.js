@@ -24,7 +24,6 @@ const BubbleChart = ({
     if (ratio < 0.7) ratio += 0.2;
     else if (ratio < 0.5) ratio += 0.3;
     else if (ratio < 0.3) ratio += 0.4;
-    console.log(ratio);
     return ratio;
   };
 
@@ -92,7 +91,7 @@ const BubbleChart = ({
       .attr('y', d => d.y)
       .attr('text-anchor', 'middle')
       .attr('dominant-baseline', 'middle')
-      .style('fill', '#ffe7d0')
+      .style('fill', 'black')
       .style('font-size', d => (d.r / 4 > 4 ? d.r / 4 : 0))
       .text(d => {
         if (!d.data.key) return '';
@@ -106,9 +105,18 @@ const BubbleChart = ({
         d3.select(this)
           .style('fill', 'black')
           .style('font-weight', 'bold'); // Change color on hover
+
+        tooltip
+          .style('opacity', 0.9)
+          .html(
+            `<div>${getToolTipLabel(d.data.key)}</div><div>Trading Volume: ${
+              d.data.volume
+            }</div>`
+          );
       })
       .on('mouseout', function(event, d) {
-        d3.select(this).style('fill', '#ffe7d0'); // Change color on mouseout
+        d3.select(this).style('fill', 'black'); // Change color on mouseout
+        tooltip.style('opacity', 0);
       });
 
     svg
@@ -117,7 +125,9 @@ const BubbleChart = ({
         onBubbleClick(d);
       })
       .on('mouseover', function(event, d) {
-        d3.select(this).style('fill', hoverColor); // Change color on hover
+        d3.select(this)
+          .style('fill', hoverColor)
+          .style('opacity', 0.9); // Change color on hover
         tooltip
           .style('opacity', 0.9)
           .html(
@@ -128,19 +138,21 @@ const BubbleChart = ({
       })
       .on('mouseout', function(event, d) {
         tooltip.style('opacity', 0);
-        d3.select(this).style('fill', color); // Change color on mouseout
+        d3.select(this)
+          .style('fill', color)
+          .style('opacity', d => calculateOpacity(d.r, maxRadius, minRadius)); // Change color on mouseout
       });
   }, [data, width, height]);
 
   return (
-    <>
+    <div className="bubble-container">
       <svg ref={svgRef} width={width} height={height}></svg>
       <div
         ref={tooltipRef}
         className="circle-tooltip"
         style={{ opacity: 0, padding: '5px', color: hoverColor }}
       ></div>
-    </>
+    </div>
   );
 };
 

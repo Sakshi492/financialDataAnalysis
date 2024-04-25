@@ -1,33 +1,31 @@
-import INTC_FINANCIAL_DATA from './financialData/INTC';
-import AAPL_FINANCIAL_DATA from './financialData/aapl';
-import AXP_FINANCIAL_DATA from './financialData/axp';
-import BA_FINANCIAL_DATA from './financialData/ba';
-import CAT_FINANCIAL_DATA from './financialData/cat';
-import CSCO_FINANCIAL_DATA from './financialData/csco';
-import CVX_FINANCIAL_DATA from './financialData/cvx';
-import DIS_FINANCIAL_DATA from './financialData/dis';
-import DWDP_FINANCIAL_DATA from './financialData/dwdp';
-import GS_FINANCIAL_DATA from './financialData/gs';
-import HD_FINANCIAL_DATA from './financialData/hd';
-import IBM_FINANCIAL_DATA from './financialData/ibm';
-import JNJ_FINANCIAL_DATA from './financialData/jnj';
-import JPM_FINANCIAL_DATA from './financialData/jpm';
-import KO_FINANCIAL_DATA from './financialData/ko';
-import MCD_FINANCIAL_DATA from './financialData/mcd';
-import MMM_FINANCIAL_DATA from './financialData/mmm';
-import MRK_FINANCIAL_DATA from './financialData/mrk';
-import MSFT_FINANCIAL_DATA from './financialData/msft';
-import NKE_FINANCIAL_DATA from './financialData/nke';
-import PFE_FINANCIAL_DATA from './financialData/pfe';
-import PG_FINANCIAL_DATA from './financialData/pg';
-import TRV_FINANCIAL_DATA from './financialData/trv';
-import UNH_FINANCIAL_DATA from './financialData/unh';
-import UTX_FINANCIAL_DATA from './financialData/utx';
-import V_FINANCIAL_DATA from './financialData/v';
-import VZ_FINANCIAL_DATA from './financialData/vz';
-import WBA_FINANCIAL_DATA from './financialData/wba';
-import WMT_FINANCIAL_DATA from './financialData/wmt';
-import XOM_FINANCIAL_DATA from './financialData/xom';
+import INTC_FINANCIAL_DATA from './intc';
+import AAPL_FINANCIAL_DATA from './aapl';
+import AXP_FINANCIAL_DATA from './axp';
+import BA_FINANCIAL_DATA from './ba';
+import CAT_FINANCIAL_DATA from './cat';
+import CSCO_FINANCIAL_DATA from './csco';
+import CVX_FINANCIAL_DATA from './cvx';
+import DIS_FINANCIAL_DATA from './dis';
+import GS_FINANCIAL_DATA from './gs';
+import HD_FINANCIAL_DATA from './hd';
+import IBM_FINANCIAL_DATA from './ibm';
+import JNJ_FINANCIAL_DATA from './jnj';
+import JPM_FINANCIAL_DATA from './jpm';
+import KO_FINANCIAL_DATA from './ko';
+import MCD_FINANCIAL_DATA from './mcd';
+import MMM_FINANCIAL_DATA from './mmm';
+import MRK_FINANCIAL_DATA from './mrk';
+import MSFT_FINANCIAL_DATA from './msft';
+import NKE_FINANCIAL_DATA from './nke';
+import PFE_FINANCIAL_DATA from './pfe';
+import PG_FINANCIAL_DATA from './pg';
+import TRV_FINANCIAL_DATA from './trv';
+import UNH_FINANCIAL_DATA from './unh';
+import V_FINANCIAL_DATA from './v';
+import VZ_FINANCIAL_DATA from './vz';
+import WBA_FINANCIAL_DATA from './wba';
+import WMT_FINANCIAL_DATA from './wmt';
+import XOM_FINANCIAL_DATA from './xom';
 
 const COMPANY_DATA = [
   {
@@ -219,13 +217,6 @@ const COMPANY_DATA = [
       { date: '2014-06-30', netIncome: 47.99 },
       { date: '2014-03-31', netIncome: 47.1 }
     ]
-  },
-  {
-    id: 'DWDP',
-    company_name:
-      'DowDuPont Inc. (Now split into Dow Inc. and DuPont de Nemours, Inc.)',
-    financial_data: DWDP_FINANCIAL_DATA,
-    net_income: []
   },
   {
     id: 'GS',
@@ -658,12 +649,6 @@ const COMPANY_DATA = [
       { date: '2014-06-30', netIncome: 5.5 },
       { date: '2014-03-31', netIncome: 5.53 }
     ]
-  },
-  {
-    id: 'UTX',
-    company_name: 'Raytheon Technologies Corporation',
-    financial_data: UTX_FINANCIAL_DATA,
-    net_income: []
   },
   {
     id: 'V',

@@ -4,22 +4,23 @@
   height: calc(100% - 4rem);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 0.8rem;
   padding: 2rem;
   .trading-page-header {
     color: $color-orange;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 18px;
   }
   .trading-control-header {
-    color: $color-orange;
-    text-transform: uppercase;
+    color: $color-beige;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 16px;
   }
   .trading-content {
-    height: 100%;
+    padding-top: 1rem;
+    height: calc(100% - 1rem);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,9 +29,9 @@
   .trading-control {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    gap: 4rem;
+    justify-content: start;
+    width: 48%;
+    gap: 2.5rem;
     .control-container {
       width: 100%;
       display: flex;
@@ -39,21 +40,27 @@
     }
     .trading-volume-bubble {
       position: relative;
-      width: fit-content;
+      width: 100%;
     }
   }
   .trading-visual {
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    gap: 4rem;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 48%;
+    gap: 1.5rem;
     .trading-control-description {
       color: $color-beige;
-      text-align: left;
+      text-align: right;
+      .trading-visual-header {
+        color: $color-orange;
+        font-size: 16px;
+        font-weight: bold;
+      }
     }
     .trading-volume-graph {
       height: fit-content;
-      text-align: left;
+      margin: 0 auto;
     }
   }
 }

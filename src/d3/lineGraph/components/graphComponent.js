@@ -39,10 +39,7 @@ const AnimatedLineGraph = ({
       svgyAxisLabel.selectAll('*').remove();
       // Define width and height of the SVG
 
-      // const width = 900;
-      // const height = 550;
       const margin = { top: 0, right: 0, bottom: 0, left: 0 };
-      const extraspace = 0;
       const innerWidth = width - margin.left - margin.right;
       const innerHeight = height - margin.top - margin.bottom;
 
@@ -108,7 +105,7 @@ const AnimatedLineGraph = ({
           .attr('fill', 'none')
           .attr('class', 'line-graph')
           .attr('stroke', element.color)
-          .attr('stroke-width', 1)
+          .attr('stroke-width', 2)
           .attr('d', line);
 
         const totalLength = path.node().getTotalLength();

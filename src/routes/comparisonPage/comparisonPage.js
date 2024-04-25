@@ -123,6 +123,20 @@ export default function ComparisonPage() {
     };
   };
 
+  const legendItems = data => {
+    return data.map(element => {
+      return (
+        <div className="legend-item" key={element.name}>
+          <div
+            className="legend-color"
+            style={{ backgroundColor: element.color }}
+          />
+          <div className="legend-label">{element.name}</div>
+        </div>
+      );
+    });
+  };
+
   return (
     <div className="comparison-page">
       <div className="comparison-page-header">
@@ -143,8 +157,8 @@ export default function ComparisonPage() {
               <div className="visual-graph">
                 <AnimatedLineGraph
                   data={getGraphData()}
-                  givenWidth={'100%'}
-                  givenHeight={'100%'}
+                  givenWidth={'90%'}
+                  givenHeight={'90%'}
                   xLabel={'Date'}
                   yLabel={'Closing Price'}
                   legendStyle={{
@@ -203,6 +217,9 @@ export default function ComparisonPage() {
               </div>
               <div className="visual-description">
                 {HOMEPAGE_LITERALS.COMPARISON.METER_DESCRIPTION}
+                <div className="visual-legend">
+                  {legendItems(getGraphData())}
+                </div>
               </div>
             </div>
           </div>

@@ -1,10 +1,45 @@
 @import './../../../assets/theme.scss';
 
-.stream-graph-svg {
-  .xAxis {
-    transform: translate(0rem, 16.5rem);
+.stream-component {
+  height: 100%;
+  position: relative;
+  width: fit-content;
+  .yAxis-svg {
+    position: absolute;
+    transform: translate(-10%, 0);
+    top: 0;
+    right: 0;
+    stroke: $color-beige;
+    fill: $color-beige;
+    color: $color-beige;
+    .svg-y-axis {
+      transform: translate(10%, -1%);
+    }
   }
-  .yAxis {
-    transform: translate(0rem, 16.5rem);
+  .xAxisLabel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(4rem, -50%);
+    color: $color-orange;
+    display: none;
+    &::after {
+      content: ' → ';
+      color: $color-orange;
+      font-weight: bold;
+    }
+  }
+  .yAxisLabel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-7.5rem, 14rem) rotate(-90deg);
+    color: $color-orange;
+    display: none;
+    &::after {
+      content: ' → ';
+      color: $color-orange;
+      font-weight: bold;
+    }
   }
 }
