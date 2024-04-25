@@ -64,3 +64,40 @@
     }
   }
 }
+
+@media screen and (max-width: $width-medium) {
+  .trading-volume-page {
+    height: calc(100% - 2rem);
+    gap: 1rem;
+    padding: 1rem;
+    .trading-page-header {
+      font-size: 16px;
+    }
+    .trading-control-header {
+      font-size: 14px;
+    }
+    .trading-content {
+      padding-top: 0.5rem;
+      height: calc(100% - 1rem);
+      gap: 1rem;
+    }
+    .trading-control {
+      gap: 2.5rem;
+      .trading-volume-bubble {
+        transform: scale(0.7) translateY(-5.5rem);
+      }
+    }
+    .trading-visual {
+      gap: 1rem;
+      .trading-volume-graph {
+        transform: scale(0.7) translateY(-2.5rem);
+      }
+      .trading-control-description {
+        transform: translateY(-5rem);
+        .trading-visual-header {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

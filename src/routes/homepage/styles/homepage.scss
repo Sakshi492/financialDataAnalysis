@@ -150,10 +150,6 @@
         flex-direction: column;
         justify-content: space-between;
         gap: 2rem;
-        &.hasContent {
-          .visual-description {
-          }
-        }
         .visual-header {
           color: $color-orange;
           font-weight: bold;
@@ -191,54 +187,97 @@
       }
     }
   }
-  // .homepage-content {
-  //   width: 100%;
-  //   display: flex;
-  //   flex-direction: row;
-  //   height: 100%;
-  //   .homepage-right {
-  //     width: 40%;
-  //   }
-  //   .homepage-visual {
-  //     width: 60%;
-  //     padding: 0.8rem 0;
-  //     display: flex;
-  //     flex-direction: column;
-  //     justify-content: center;
-  //     position: relative;
-  //     .homepage-subheader {
-  //       color: $color-beige;
-  //       font-weight: bold;
-  //       position: absolute;
-  //       top: 0.8rem;
-  //     }
-  //   }
-  // }
 }
 
 @media screen and (max-width: $width-large) {
-  .homepage-container .landing-content {
-    padding: 0 7%;
+  .homepage-container {
+    height: calc(100% - 3rem);
+    padding: 1.5rem;
+    gap: 0.8rem;
+    .homepage-header {
+      font-size: 17px;
+    }
+    .visual-header {
+      font-size: 15px;
+    }
+    .acknowledgement {
+      font-size: 13px;
+      padding-bottom: 1.5rem;
+    }
+    .homepage-content {
+      gap: 0.5rem;
+      .homepage-visuals {
+        height: calc(100% - 1rem);
+        gap: 0.5rem;
+        .visual {
+          gap: 0.5rem;
+          &.hasContent {
+            height: calc(50% - 0.5rem);
+            .visual-header {
+              font-size: 12px;
+              gap: 0.5rem;
+            }
+            .visual-graph {
+              transform: translate(1rem, 0rem);
+            }
+          }
+          .visual-header {
+            font-size: 14px;
+            gap: 1rem;
+            .visual-legend {
+              gap: 0.4rem;
+              .legend-item {
+                gap: 0.4rem;
+                .legend-label {
+                  font-size: 12px;
+                }
+                .legend-color {
+                  height: 0.5rem;
+                  width: 0.5rem;
+                  border-radius: 0.12rem;
+                }
+              }
+            }
+          }
+          .visual-description {
+            font-size: 12px;
+            padding-bottom: 1rem;
+          }
+        }
+      }
+      .homepage-controls {
+        gap: 1rem;
+        .compare-button {
+          top: -3rem;
+          font-size: 12px;
+        }
+        .visual {
+          gap: 1rem;
+          &.hasContent {
+            .visual-description {
+              transform: translateY(-4rem);
+            }
+            .analyse-button {
+              transform: translateY(-4rem);
+            }
+          }
+          .visual-header {
+            font-size: 14px;
+          }
+          .visual-content {
+            gap: 1rem;
+            .visual-graph {
+              transform: scale(0.7) translateY(-2.5rem);
+            }
+            .analyse-button {
+              font-size: 12px;
+            }
+            .visual-description {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
   }
-}
-
-@media screen and (max-width: $width-medium) {
-}
-
-@media screen and (max-width: $width-small) {
-  .homepage-container .landing-content {
-    transform: translateY(10%);
-    flex-direction: column-reverse;
-    justify-content: center;
-    height: 90%;
-  }
-}
-
-@media screen and (max-width: $width-extra-small) {
-}
-
-@media screen and (max-width: $width-mini) {
-}
-
-@media screen and (max-width: $width-micro) {
 }

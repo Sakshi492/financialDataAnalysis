@@ -43,3 +43,25 @@
     }
   }
 }
+
+@media screen and (max-width: $width-large) {
+  .stream-component {
+    .xAxisLabel {
+      font-size: 13px;
+    }
+    .yAxisLabel {
+      font-size: 13px;
+    }
+  }
+}
+
+@media screen and (max-width: $width-medium) {
+  .stream-component {
+    .xAxisLabel {
+      font-size: 12px;
+    }
+    .yAxisLabel {
+      font-size: 12px;
+    }
+  }
+}

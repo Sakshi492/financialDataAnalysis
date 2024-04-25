@@ -43,3 +43,32 @@
     }
   }
 }
+
+@media screen and (max-width: $width-large) {
+  .dropdown-control {
+    gap: 0.8rem;
+    min-width: 12rem;
+    .dropdown-control-header {
+      font-size: 15px;
+    }
+    .dropdown-control-container {
+      font-size: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: $width-medium) {
+  .dropdown-control {
+    gap: 0.5rem;
+    min-width: 10rem;
+    .dropdown-control-header {
+      font-size: 14px;
+    }
+    .dropdown-control-container {
+      font-size: 14px;
+      .select__option {
+        padding: 0.8rem;
+      }
+    }
+  }
+}

@@ -39,10 +39,6 @@ const AnimatedLineGraph = ({
       svgyAxisLabel.selectAll('*').remove();
       // Define width and height of the SVG
 
-      const margin = { top: 0, right: 0, bottom: 0, left: 0 };
-      const innerWidth = width - margin.left - margin.right;
-      const innerHeight = height - margin.top - margin.bottom;
-
       let datapoints = [];
       data.forEach(element => {
         datapoints = [...datapoints, ...element.items];
@@ -56,18 +52,18 @@ const AnimatedLineGraph = ({
         xScale = d3
           .scaleLinear()
           .domain([0, d3.max(dates)])
-          .range([0, innerWidth]);
+          .range([0, width]);
       } else {
         xScale = d3
           .scaleTime()
           .domain(d3.extent(dates))
-          .range([0, innerWidth]);
+          .range([0, width]);
       }
 
       const yScale = d3
         .scaleLinear()
         .domain([0, d3.max(values)])
-        .range([innerHeight, 0]);
+        .range([height, 0]);
 
       // Draw x-axis
       const xAxis = d3.axisBottom(xScale).tickFormat(customXAxisTickFormat);
@@ -85,7 +81,6 @@ const AnimatedLineGraph = ({
       const yAxisGroup = svgyAxis
         .append('g')
         .attr('class', 'svg-y-axis')
-        .attr('transform', `translate(${innerWidth}, 0)`) // Move the second axis to the right
         .call(yAxis)
         .selectAll('path');
 

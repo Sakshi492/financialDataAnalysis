@@ -32,3 +32,21 @@
     }
   }
 }
+
+@media screen and (max-width: $width-large) {
+  .histogram-component {
+    .yAxisLabel {
+      transform: translate(5.5rem, 6rem) rotate(-90deg);
+    }
+  }
+}
+
+@media screen and (max-width: $width-medium) {
+  .histogram-component {
+    width: calc(100% - 1rem);
+    padding-left: 1rem;
+    .yAxisLabel {
+      transform: translate(6.5rem, 6rem) rotate(-90deg);
+    }
+  }
+}

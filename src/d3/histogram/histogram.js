@@ -9,8 +9,6 @@ const Histogram = ({ data, givenWidth, givenHeight, xLabel, yLabel }) => {
   const svgxAxisLabelRef = useRef();
   const svgyAxisLabelRef = useRef();
 
-  console.log('Histogram', data);
-
   useEffect(() => {
     if (data && data.length > 0) {
       const svg = d3.select(svgRef.current);
@@ -29,11 +27,6 @@ const Histogram = ({ data, givenWidth, givenHeight, xLabel, yLabel }) => {
       svgxAxisLabel.selectAll('*').remove();
       svgyAxisLabel.selectAll('*').remove();
 
-      const margin = { top: 0, right: 0, bottom: 0, left: 0 };
-      const extraspace = 0;
-      const innerWidth = width - margin.left - margin.right;
-      const innerHeight = height - margin.top - margin.bottom;
-
       let datapoints = [];
 
       data.forEach(element => {
@@ -48,37 +41,24 @@ const Histogram = ({ data, givenWidth, givenHeight, xLabel, yLabel }) => {
       const xScale = d3
         .scaleTime()
         .domain(d3.extent(dates))
-        .range([0, innerWidth]);
+        .range([0, width]);
 
       const yScale = d3
         .scaleLinear()
         .domain([d3.min(values) - 5, d3.max(values)])
         .nice()
-        .range([innerHeight, 0]);
+        .range([height, 0]);
 
-      const xAxis = d3.axisBottom(xScale);
       const yAxis = d3.axisLeft(yScale);
 
       const yAxisGroup = svgyAxis
         .append('g')
         .attr('class', 'svg-y-axis')
-        .attr('transform', `translate(${innerWidth}, 0)`) // Move the second axis to the right
+        .attr('transform', `translate(${width}, 0)`) // Move the second axis to the right
         .call(yAxis)
         .selectAll('path');
 
       svgyAxisLabel.style('display', 'block');
-
-      //  const path = svg
-      //   .selectAll('.bar')
-      //   .data(datapoints)
-      //   .enter()
-      //   .append('rect')
-      //   .attr('class', 'bar')
-      //   .attr('x', d => xScale(d.date) - 5) // Adjust bar position for better visualization
-      //   .attr('y', d => yScale(d.value))
-      //   .attr('width', 10) // Adjust bar width as needed
-      //   .attr('height', d => innerHeight - yScale(d.value))
-      //   .attr('fill', '#004D97');
 
       svg
         .selectAll('.bar')
@@ -87,7 +67,7 @@ const Histogram = ({ data, givenWidth, givenHeight, xLabel, yLabel }) => {
         .append('rect')
         .attr('class', 'bar')
         .attr('x', d => xScale(d.date) - 5) // Adjust bar position for better visualization
-        .attr('y', innerHeight) // Start bars from the bottom
+        .attr('y', height) // Start bars from the bottom
         .attr('width', 10) // Adjust bar width as needed
         .attr('height', 0) // Start bars with height 0
         .attr('fill', '#004D97')
@@ -96,7 +76,7 @@ const Histogram = ({ data, givenWidth, givenHeight, xLabel, yLabel }) => {
         .duration(1000) // Animation duration
         .delay((d, i) => (datapoints.length - i) * 100) // Add delay for staggered animation
         .attr('y', d => yScale(d.value))
-        .attr('height', d => innerHeight - yScale(d.value));
+        .attr('height', d => height - yScale(d.value));
     }
   }, [data]);
 

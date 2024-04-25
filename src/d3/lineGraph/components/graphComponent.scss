@@ -1,7 +1,6 @@
 @import './../../../assets/theme.scss';
 
 .graph-component {
-  //   transform: translate(12.5%, -4rem);
   width: calc(100% - 1.5rem);
   height: 100%;
   position: relative;
@@ -20,10 +19,6 @@
         .tick:nth-of-type(odd) {
           visibility: hidden;
         }
-        // .tick:nth-of-type(3n) {
-        //   visibility: hidden;
-        //   color: black;
-        // }
       }
     }
   }
@@ -63,6 +58,33 @@
       content: ' → ';
       color: $color-orange;
       font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: $width-large) {
+  .graph-component {
+    .xAxisLabel {
+      font-size: 15px;
+      transform: translate(13rem, 0.5rem);
+    }
+    .yAxisLabel {
+      font-size: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: $width-medium) {
+  .graph-component {
+    width: calc(100% - 1rem);
+    padding-left: 1rem;
+    .xAxisLabel {
+      font-size: 14px;
+      transform: translate(12rem, 0.5rem);
+    }
+    .yAxisLabel {
+      font-size: 14px;
+      transform: translate(-4rem, 4rem) rotate(-90deg);
     }
   }
 }

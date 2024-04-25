@@ -61,7 +61,7 @@ export default function HomePage() {
       },
       {
         name: 'S&P Global',
-        color: '#515152',
+        color: '#004D97',
         items: SNP_GLOBAL_DATA.map(data => {
           return {
             date: new Date(data.date),

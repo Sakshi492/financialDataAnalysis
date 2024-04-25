@@ -12,7 +12,6 @@ const BubbleChart = ({
 }) => {
   const svgRef = useRef();
   const tooltipRef = useRef(null);
-  console.log('BubbleChart', data);
 
   // Function to calculate opacity based on radius
   const calculateOpacity = (radius, maxRadius, minRadius) => {
@@ -69,7 +68,6 @@ const BubbleChart = ({
       .attr('cy', (d, i) => randomPositions[i].y)
       .attr('r', 0) // Start with radius 0
       .style('fill', color)
-      // .style("opacity", 0.9)
       .transition() // Apply transition for animation
       .duration(1000) // Animation duration
       .delay((d, i) => i) // Add delay for staggered animation

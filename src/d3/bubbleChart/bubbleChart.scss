@@ -7,12 +7,6 @@
   text-align: center;
 }
 
-svg {
-  cursor: pointer;
-  circle {
-  }
-}
-
 .circle-tooltip {
   color: $color-beige;
   width: 100%;
@@ -22,4 +16,16 @@ svg {
   left: 0;
   top: -2rem;
   font-weight: bold;
+}
+
+@media screen and (max-width: $width-large) {
+  .circle-tooltip {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: $width-medium) {
+  .circle-tooltip {
+    font-size: 9px;
+  }
 }

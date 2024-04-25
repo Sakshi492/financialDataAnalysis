@@ -89,9 +89,6 @@
           flex-direction: column;
           gap: 0.8rem;
           justify-content: space-between;
-          .visual-graph {
-          }
-
           .visual-description {
             color: $color-beige;
             font-size: 14px;
@@ -119,6 +116,79 @@
                   width: 1rem;
                   border-radius: 0.2rem;
                   transform: translate(0, 3px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $width-large) {
+  .comparison-page {
+    height: calc(100% - 2rem);
+    padding: 1rem;
+    gap: 0.5rem;
+    .comparison-page-header {
+      font-size: 16px;
+    }
+    .visual-header {
+      font-size: 14px;
+    }
+    .comparison-content {
+      gap: 3rem;
+      .comparison-visuals {
+        .visual {
+          height: calc(100% - 2rem);
+          gap: 0.5rem;
+          .visual-header {
+            font-size: 14px;
+          }
+          .visual-content {
+            gap: 0.5rem;
+            .visual-graph {
+              transform: translate(1.2rem, 0rem);
+            }
+            .visual-description {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .comparison-controls {
+        gap: 1rem;
+        transform: translate(0, -2rem);
+        .dropdowns {
+          gap: 0.5rem;
+        }
+        .visual {
+          gap: 0.5rem;
+          .visual-header {
+            font-size: 16px;
+          }
+          .visual-content {
+            gap: 0.5rem;
+            .visual-graph {
+              transform: scale(0.7) translateY(-2rem);
+            }
+            .visual-description {
+              font-size: 12px;
+              transform: translate(0, -6rem);
+              gap: 0.5rem;
+              .visual-legend {
+                gap: 0.25rem;
+                .legend-item {
+                  gap: 0.25rem;
+                  .legend-label {
+                    font-size: 12px;
+                  }
+                  .legend-color {
+                    height: 0.5rem;
+                    width: 0.5rem;
+                    border-radius: 0.1rem;
+                  }
                 }
               }
             }
