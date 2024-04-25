@@ -1,42 +1,68 @@
 @import './../../../assets/theme.scss';
 
 .graph-component {
-  transform: translate(15%, -5rem);
-  .y-axis-label {
-    transform: translate(-17rem, 17.4rem) rotate(-90deg);
-    fill: $color-orange;
-  }
-  .x-axis-label {
-    transform: translate(4.5rem, 0.5rem);
-    fill: $color-orange;
-  }
-  .x-axis-arrow {
-    transform: translate(-2rem, 27.4rem) rotate(-90deg);
-  }
-  .y-axis-arrow {
-    transform: translate(9.9rem, 22rem) rotate(-180deg);
-  }
-  .svg-x-axis {
-    .tick {
-      line {
-        stroke: $color-beige;
-      }
-      text {
-        stroke: $color-beige;
-      }
-    }
-  }
-  .svg-y-axis {
-    .tick {
-      line {
-        stroke: $color-beige;
-      }
-      text {
-        stroke: $color-beige;
+  //   transform: translate(12.5%, -4rem);
+  width: calc(100% - 1.5rem);
+  height: 100%;
+  position: relative;
+  padding-left: 1.5rem;
+  z-index: 1;
+  .xAxis-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(1.5rem, 100%);
+    stroke: $color-beige;
+    fill: $color-beige;
+    color: $color-beige;
+    &.hideAlternate {
+      .svg-x-axis {
+        .tick:nth-of-type(odd) {
+          visibility: hidden;
+        }
+        // .tick:nth-of-type(3n) {
+        //   visibility: hidden;
+        //   color: black;
+        // }
       }
     }
   }
-  .legend {
-    transform: translate(2rem, -0.5rem);
+  .yAxis-svg {
+    position: absolute;
+    transform: translate(calc(-10% + 1.5rem), 1%);
+    top: 0;
+    left: 0;
+    stroke: $color-beige;
+    fill: $color-beige;
+    color: $color-beige;
+    .svg-y-axis {
+      transform: translate(10%, -1%);
+    }
+  }
+  .xAxisLabel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(15rem, 0.5rem);
+    color: $color-orange;
+    display: none;
+    &::after {
+      content: ' → ';
+      color: $color-orange;
+      font-weight: bold;
+    }
+  }
+  .yAxisLabel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-4.5rem, 10rem) rotate(-90deg);
+    color: $color-orange;
+    display: none;
+    &::after {
+      content: ' → ';
+      color: $color-orange;
+      font-weight: bold;
+    }
   }
 }

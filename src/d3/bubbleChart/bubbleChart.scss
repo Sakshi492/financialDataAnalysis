@@ -1,0 +1,18 @@
+@import '../../assets/theme.scss';
+
+svg {
+  cursor: pointer;
+  circle {
+  }
+}
+
+.circle-tooltip {
+  color: $color-beige;
+  width: 100%;
+  text-align: left;
+  font-size: 11px;
+  position: absolute;
+  left: 0;
+  top: -2rem;
+  font-weight: bold;
+}

@@ -1,0 +1,105 @@
+@import '../../../assets/theme.scss';
+
+.comparison-page {
+  height: calc(100% - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 1rem;
+  .comparison-page-header {
+    color: $color-orange;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 21px;
+  }
+  .visual-header {
+    color: $color-beige;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .comparison-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5rem;
+    height: 95%;
+    .comparison-visuals {
+      width: 70%;
+      height: 100%;
+      .visual {
+        height: calc(100% - 2rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+        .visual-header {
+          color: $color-orange;
+          font-weight: bold;
+          font-size: 18px;
+        }
+        .visual-content {
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: space-between;
+          gap: 1rem;
+          width: 100%;
+          height: calc(100% - 2.5rem);
+          .visual-graph {
+            width: 100%;
+            height: 80%;
+          }
+          .visual-description {
+            color: $color-beige;
+            width: 100%;
+            font-size: 16px;
+            padding-top: 1rem;
+          }
+        }
+      }
+    }
+    .comparison-controls {
+      width: 28%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      gap: 2rem;
+      position: relative;
+      transform: translate(0, -4rem);
+      .dropdowns {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .visual {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.8rem;
+        .visual-header {
+          color: $color-orange;
+          font-weight: bold;
+          font-size: 21px;
+          text-align: center;
+          transform: translate(-0.2rem, 0);
+        }
+        .visual-content {
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+          justify-content: space-between;
+          .visual-graph {
+          }
+
+          .visual-description {
+            color: $color-beige;
+            font-size: 16px;
+            transform: translate(0, -2.5rem);
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

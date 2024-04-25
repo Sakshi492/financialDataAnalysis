@@ -1,6 +1,7 @@
 @import '../../../assets/theme.scss';
 
 .gauge-container {
+  height: fit-content;
   .svg-container {
     display: flex;
     flex-direction: row;
@@ -9,18 +10,17 @@
   .gauge-labels {
     font-weight: bold;
     text-align: center;
-    transform: translateY(-5rem);
+    transform: translateY(-3.5rem);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     .gauge-value {
-      color: $color-orange;
-    }
-    .gauge-label {
-      color: $color-orange;
+      color: $color-beige;
+      font-size: 28px;
+      transform: translateY(-0.5rem);
     }
     .gauge-sublabel {
-      color: $color-beige;
+      color: $color-orange;
     }
   }
 }

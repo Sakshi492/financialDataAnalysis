@@ -1,0 +1,34 @@
+@import './../../assets/theme.scss';
+
+.histogram-component {
+  width: calc(100% - 1.5rem);
+  height: 100%;
+  position: relative;
+  padding-left: 1.5rem;
+  transform: translateY(-100%);
+  .yAxis-svg {
+    position: absolute;
+    transform: translate(calc(-21% + 1.5rem), 0%);
+    top: 0;
+    left: calc(100% + 0.5rem);
+    stroke: $color-beige;
+    fill: $color-beige;
+    color: $color-beige;
+    .svg-y-axis {
+      transform: translate(10%, -1%);
+    }
+  }
+  .yAxisLabel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(5.5rem, 10rem) rotate(-90deg);
+    color: $color-orange;
+    display: none;
+    &::after {
+      content: ' → ';
+      color: $color-orange;
+      font-weight: bold;
+    }
+  }
+}

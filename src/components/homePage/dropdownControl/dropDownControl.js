@@ -29,6 +29,22 @@ const DropDownControl = props => {
         border: '1px solid #ffe7d0'
       }
     }),
+    menuList: base => ({
+      ...base,
+
+      '::-webkit-scrollbar': {
+        width: '5px'
+      },
+      '::-webkit-scrollbar-track': {
+        color: '#fc6e20'
+      },
+      '::-webkit-scrollbar-thumb': {
+        background: '#fc6e20'
+      },
+      '::-webkit-scrollbar-thumb:hover': {
+        background: '#fc6e20'
+      }
+    }),
     option: base => ({
       ...base,
       background: '#1b1b1b',
@@ -41,6 +57,10 @@ const DropDownControl = props => {
       '&:hover': {
         background: '#ffe7d0'
       }
+    }),
+    input: base => ({
+      ...base,
+      color: '#fc6e20'
     }),
     valueContainer: base => ({
       ...base,
@@ -63,6 +83,7 @@ const DropDownControl = props => {
           isDisabled={isDisabled}
           isLoading={isLoading}
           // isRtl={isRtl}
+          value={props.currentValue}
           isSearchable={true}
           name="color"
           options={options}

@@ -107,7 +107,7 @@ const Gauge = ({
           {...props}
         >
           <GaugeArc
-            stroke={'#fc6e20'}
+            stroke={'#ee5138'}
             strokeWidth={4}
             center={gaugeOrigin}
             maxAngle={maxAngle}
@@ -158,7 +158,6 @@ const Gauge = ({
         {props.sublabel && (
           <div className="gauge-value">{value.toFixed(3)}</div>
         )}
-        <div className="gauge-label">{props.label}</div>
         <div className="gauge-sublabel">{props.sublabel}</div>
       </div>
     </div>

@@ -40,7 +40,7 @@
     "react": "16.8.6",
     "react-d3-library": "^1.1.8",
     "react-dom": "16.8.6",
-    "react-router-dom": "^6.2.1",
+    "react-router-dom": "^6.23.0",
     "react-scripts": "^0.4.0",
     "react-scroll-to-component": "^1.0.2",
     "react-select": "^2.4.4",

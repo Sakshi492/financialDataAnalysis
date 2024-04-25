@@ -1,24 +1,15 @@
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import './graphComponent.scss';
+import './histogram.scss';
 
-const AnimatedLineGraph = ({
-  data,
-  givenWidth,
-  givenHeight,
-  xLabel,
-  yLabel,
-  hasQuarters,
-  customXAxisTickFormat,
-  hideAlternate
-}) => {
+const Histogram = ({ data, givenWidth, givenHeight, xLabel, yLabel }) => {
   const svgRef = useRef();
   const svgxAxisRef = useRef();
   const svgyAxisRef = useRef();
   const svgxAxisLabelRef = useRef();
   const svgyAxisLabelRef = useRef();
 
-  console.log('AnimatedLineGraph', data);
+  console.log('Histogram', data);
 
   useEffect(() => {
     if (data && data.length > 0) {
@@ -27,64 +18,47 @@ const AnimatedLineGraph = ({
       const svgyAxis = d3.select(svgyAxisRef.current);
       const svgxAxisLabel = d3.select(svgxAxisLabelRef.current);
       const svgyAxisLabel = d3.select(svgyAxisLabelRef.current);
-      // Get the DOM node of the selected SVG element
+
       const svgNode = svg.node();
 
-      // Get the bounding client rect of the SVG element
       const { width, height } = svgNode.getBoundingClientRect();
+
       svg.selectAll('*').remove();
       svgxAxis.selectAll('*').remove();
       svgyAxis.selectAll('*').remove();
       svgxAxisLabel.selectAll('*').remove();
       svgyAxisLabel.selectAll('*').remove();
-      // Define width and height of the SVG
 
-      // const width = 900;
-      // const height = 550;
       const margin = { top: 0, right: 0, bottom: 0, left: 0 };
       const extraspace = 0;
       const innerWidth = width - margin.left - margin.right;
       const innerHeight = height - margin.top - margin.bottom;
 
       let datapoints = [];
+
       data.forEach(element => {
         datapoints = [...datapoints, ...element.items];
       });
 
+      // Extract dates and values from the data
       const dates = datapoints.map(d => d.date);
       const values = datapoints.map(d => d.value);
 
-      let xScale;
-      if (hasQuarters === true) {
-        xScale = d3
-          .scaleLinear()
-          .domain([0, d3.max(dates)])
-          .range([0, innerWidth]);
-      } else {
-        xScale = d3
-          .scaleTime()
-          .domain(d3.extent(dates))
-          .range([0, innerWidth]);
-      }
+      // Define x and y scales
+      const xScale = d3
+        .scaleTime()
+        .domain(d3.extent(dates))
+        .range([0, innerWidth]);
 
       const yScale = d3
         .scaleLinear()
-        .domain([0, d3.max(values)])
+        .domain([d3.min(values) - 5, d3.max(values)])
+        .nice()
         .range([innerHeight, 0]);
 
-      // Draw x-axis
-      const xAxis = d3.axisBottom(xScale).tickFormat(customXAxisTickFormat);
-      const xAxisGroup = svgxAxis
-        .append('g')
-        .attr('class', 'svg-x-axis')
-        .call(xAxis)
-        .selectAll('path');
-
-      svgxAxisLabel.style('display', 'block');
-      svgyAxisLabel.style('display', 'block');
-
-      // Draw y-axis
+      const xAxis = d3.axisBottom(xScale);
       const yAxis = d3.axisLeft(yScale);
+
       const yAxisGroup = svgyAxis
         .append('g')
         .attr('class', 'svg-y-axis')
@@ -92,39 +66,42 @@ const AnimatedLineGraph = ({
         .call(yAxis)
         .selectAll('path');
 
-      data.forEach((element, index) => {
-        // Draw lines
-        const items = element.items;
-        const validItems = items.filter(d => !isNaN(d.date) && !isNaN(d.value));
-        const line = d3
-          .line()
-          .x(d => xScale(d.date))
-          .y(d => yScale(d.value))
-          .curve(d3.curveCardinal.tension(0.5));
+      svgyAxisLabel.style('display', 'block');
 
-        const path = svg
-          .append('path')
-          .datum(validItems)
-          .attr('fill', 'none')
-          .attr('class', 'line-graph')
-          .attr('stroke', element.color)
-          .attr('stroke-width', 1)
-          .attr('d', line);
+      //  const path = svg
+      //   .selectAll('.bar')
+      //   .data(datapoints)
+      //   .enter()
+      //   .append('rect')
+      //   .attr('class', 'bar')
+      //   .attr('x', d => xScale(d.date) - 5) // Adjust bar position for better visualization
+      //   .attr('y', d => yScale(d.value))
+      //   .attr('width', 10) // Adjust bar width as needed
+      //   .attr('height', d => innerHeight - yScale(d.value))
+      //   .attr('fill', '#004D97');
 
-        const totalLength = path.node().getTotalLength();
-        path
-          .attr('stroke-dasharray', totalLength + ' ' + totalLength)
-          .attr('stroke-dashoffset', totalLength)
-          .transition()
-          .duration(2000)
-          .style('transition-timing-function', 'cubic-bezier(.57,.21,.69,1.25)')
-          .attr('stroke-dashoffset', 0);
-      });
+      svg
+        .selectAll('.bar')
+        .data(datapoints)
+        .enter()
+        .append('rect')
+        .attr('class', 'bar')
+        .attr('x', d => xScale(d.date) - 5) // Adjust bar position for better visualization
+        .attr('y', innerHeight) // Start bars from the bottom
+        .attr('width', 10) // Adjust bar width as needed
+        .attr('height', 0) // Start bars with height 0
+        .attr('fill', '#004D97')
+        // Transition bars to their actual position and height
+        .transition()
+        .duration(1000) // Animation duration
+        .delay((d, i) => (datapoints.length - i) * 100) // Add delay for staggered animation
+        .attr('y', d => yScale(d.value))
+        .attr('height', d => innerHeight - yScale(d.value));
     }
   }, [data]);
 
   return (
-    <div className="graph-component">
+    <div className="histogram-component">
       <svg
         ref={svgRef}
         width={givenWidth ?? 300}
@@ -134,7 +111,7 @@ const AnimatedLineGraph = ({
         ref={svgxAxisRef}
         width={givenWidth ?? 300}
         height={givenHeight ?? 300}
-        className={`xAxis-svg ${hideAlternate ? 'hideAlternate' : ''}`}
+        className="xAxis-svg"
       ></svg>
       <svg
         ref={svgyAxisRef}
@@ -152,4 +129,4 @@ const AnimatedLineGraph = ({
   );
 };
 
-export default AnimatedLineGraph;
+export default Histogram;

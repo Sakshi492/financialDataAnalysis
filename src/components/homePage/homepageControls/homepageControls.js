@@ -8,9 +8,14 @@ import calculateCorrelation from 'calculate-correlation';
 import GraphComponent from '../../../d3/lineGraph/components/graphComponent';
 import CorrelationDefinition from '../correlationDefinition/correlationDefinition';
 
-const HomepageControls = () => {
-  const [firstCompany, setFirstCompany] = useState(undefined);
-  const [secondCompany, setSecondCompany] = useState(undefined);
+const HomepageControls = ({
+  firstCompany,
+  secondCompany,
+  setFirstCompany,
+  setSecondCompany
+}) => {
+  //   const [firstCompany, setFirstCompany] = useState(undefined);
+  //   const [secondCompany, setSecondCompany] = useState(undefined);
   const [firstDropdownOptions, setFirstDropdownOptions] = useState([]);
   const [secondDropdownOptions, setSecondDropdownOptions] = useState([]);
   const [correlation, setCorrelation] = useState(0);
@@ -38,7 +43,7 @@ const HomepageControls = () => {
       name: `${firstCompanyData &&
         firstCompanyData.id.toUpperCase()} : ${firstCompanyData &&
         firstCompanyData.company_name}`,
-      color: '#F535AA',
+      color: '#ee5138',
       items: firstCompanyFinancialData.map(data => ({
         date: new Date(data.date),
         value: data.close
@@ -59,7 +64,7 @@ const HomepageControls = () => {
       name: `${secondCompanyData &&
         secondCompanyData.id.toUpperCase()} : ${secondCompanyData &&
         secondCompanyData.company_name}`,
-      color: '#04d9ff',
+      color: '#405fab',
       items: secondCompanyFinancialData.map(data => ({
         date: new Date(data.date),
         value: data.close
@@ -109,35 +114,43 @@ const HomepageControls = () => {
   }, [secondCompany]);
 
   return (
-    <div className="homepage-controls-container">
-      <div className="controls-header">{HOMEPAGE_LITERALS.CONTROLS_HEADER}</div>
-      <DropDownControl
-        header={HOMEPAGE_LITERALS.DROPDOWN_HEADER_1}
-        options={firstDropdownOptions}
-        onValueChange={setFirstCompany}
-      />
-      <DropDownControl
-        header={HOMEPAGE_LITERALS.DROPDOWN_HEADER_2}
-        options={secondDropdownOptions}
-        onValueChange={setSecondCompany}
-      />
-      <Gauge
-        min={HOMEPAGE_LITERALS.GAUGE.MIN_VALUE}
-        max={HOMEPAGE_LITERALS.GAUGE.MAX_VALUE}
-        value={correlation}
-        label={HOMEPAGE_LITERALS.GAUGE.LABEL}
-        sublabel={
-          firstCompany &&
-          secondCompany &&
-          `${firstCompany.toUpperCase()} - ${secondCompany.toUpperCase()}`
-        }
-        maxAngle={HOMEPAGE_LITERALS.GAUGE.MAX_ANGLE}
-        minAngle={HOMEPAGE_LITERALS.GAUGE.MIN_ANGLE}
-        tickCount={6}
-        labelProps={{
-          offsetText: -10
-        }}
-      />
+    <div
+      className={`homepage-controls-container ${
+        chartData.length > 0 ? 'showGraphs' : ''
+      }`}
+    >
+      {/* <div className="controls-header">{HOMEPAGE_LITERALS.CONTROLS_HEADER}</div> */}
+      <div className="dropdowns">
+        <DropDownControl
+          header={HOMEPAGE_LITERALS.DROPDOWN_HEADER_1}
+          options={firstDropdownOptions}
+          onValueChange={setFirstCompany}
+        />
+        <DropDownControl
+          header={HOMEPAGE_LITERALS.DROPDOWN_HEADER_2}
+          options={secondDropdownOptions}
+          onValueChange={setSecondCompany}
+        />
+      </div>
+      <div className="gauge-control">
+        <Gauge
+          min={HOMEPAGE_LITERALS.GAUGE.MIN_VALUE}
+          max={HOMEPAGE_LITERALS.GAUGE.MAX_VALUE}
+          value={correlation}
+          label={HOMEPAGE_LITERALS.GAUGE.LABEL}
+          sublabel={
+            firstCompany &&
+            secondCompany &&
+            `${firstCompany.toUpperCase()} - ${secondCompany.toUpperCase()}`
+          }
+          maxAngle={HOMEPAGE_LITERALS.GAUGE.MAX_ANGLE}
+          minAngle={HOMEPAGE_LITERALS.GAUGE.MIN_ANGLE}
+          tickCount={6}
+          labelProps={{
+            offsetText: -10
+          }}
+        />
+      </div>
       {chartData.length > 0 ? (
         <GraphComponent data={chartData} />
       ) : (

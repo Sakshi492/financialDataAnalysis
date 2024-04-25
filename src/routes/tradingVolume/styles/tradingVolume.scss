@@ -1,0 +1,59 @@
+@import '../../../assets/theme.scss';
+
+.trading-volume-page {
+  height: calc(100% - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  .trading-page-header {
+    color: $color-orange;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 28px;
+  }
+  .trading-control-header {
+    color: $color-orange;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 28px;
+  }
+  .trading-content {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .trading-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    gap: 4rem;
+    .control-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .trading-volume-bubble {
+      position: relative;
+      width: fit-content;
+    }
+  }
+  .trading-visual {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 4rem;
+    .trading-control-description {
+      color: $color-beige;
+      text-align: left;
+    }
+    .trading-volume-graph {
+      height: fit-content;
+      text-align: left;
+    }
+  }
+}
