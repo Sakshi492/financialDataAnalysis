@@ -4,6 +4,7 @@
   height: 100%;
   position: relative;
   width: fit-content;
+  cursor: pointer;
   .yAxis-svg {
     position: absolute;
     transform: translate(-10%, 0);
@@ -14,6 +15,9 @@
     color: $color-beige;
     .svg-y-axis {
       transform: translate(10%, -1%);
+      .tick {
+        transition-timing-function: cubic-bezier(0.57, 0.21, 0.69, 1.25);
+      }
     }
   }
   .xAxisLabel {
@@ -40,6 +44,19 @@
       content: ' → ';
       color: $color-orange;
       font-weight: bold;
+    }
+  }
+  .graph-tooltip {
+    padding: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    .graph-tooltip-text {
+      font-size: 12px;
+      position: absolute;
+      top: -22px;
+      right: 1rem;
     }
   }
 }

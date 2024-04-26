@@ -51,6 +51,30 @@
             height: 80%;
             transform: translate(2rem, 0rem);
           }
+          .visual-legend {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 16px;
+            margin: 0 1rem;
+            .legend-item {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              gap: 0.5rem;
+              .legend-label {
+                color: $color-beige;
+                font-size: 16px;
+                font-weight: normal;
+              }
+              .legend-color {
+                height: 1rem;
+                width: 1rem;
+                border-radius: 0.2rem;
+                transform: translate(0, 3px);
+              }
+            }
+          }
           .visual-description {
             color: $color-beige;
             width: 100%;
@@ -97,28 +121,6 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
-            .visual-legend {
-              display: flex;
-              flex-direction: column;
-              gap: 0.5rem;
-              .legend-item {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                gap: 0.5rem;
-                .legend-label {
-                  color: $color-beige;
-                  font-size: 16px;
-                  font-weight: normal;
-                }
-                .legend-color {
-                  height: 1rem;
-                  width: 1rem;
-                  border-radius: 0.2rem;
-                  transform: translate(0, 3px);
-                }
-              }
-            }
           }
         }
       }
@@ -151,6 +153,21 @@
             .visual-graph {
               transform: translate(1.2rem, 0rem);
             }
+            .visual-legend {
+              gap: 12px;
+              margin: 0 0.8rem;
+              .legend-item {
+                gap: 0.25rem;
+                .legend-label {
+                  font-size: 12px;
+                }
+                .legend-color {
+                  height: 0.5rem;
+                  width: 0.5rem;
+                  border-radius: 0.1rem;
+                }
+              }
+            }
             .visual-description {
               font-size: 12px;
             }
@@ -177,20 +194,6 @@
               font-size: 12px;
               transform: translate(0, -6rem);
               gap: 0.5rem;
-              .visual-legend {
-                gap: 0.25rem;
-                .legend-item {
-                  gap: 0.25rem;
-                  .legend-label {
-                    font-size: 12px;
-                  }
-                  .legend-color {
-                    height: 0.5rem;
-                    width: 0.5rem;
-                    border-radius: 0.1rem;
-                  }
-                }
-              }
             }
           }
         }

@@ -111,10 +111,6 @@ export default function ComparisonPage() {
     return graphData;
   };
 
-  const getAverageClosingPriceData = () => {
-    const averageClosingPrices = [];
-  };
-
   const getSelectedCompanyValue = company => {
     if (!company.label || !company.id) return undefined;
     return {
@@ -161,14 +157,9 @@ export default function ComparisonPage() {
                   givenHeight={'90%'}
                   xLabel={'Date'}
                   yLabel={'Closing Price'}
-                  legendStyle={{
-                    top: '-4rem',
-                    right: 'unset',
-                    left: '4rem'
-                  }}
                 />
               </div>
-
+              <div className="visual-legend">{legendItems(getGraphData())}</div>
               <div className="visual-description">
                 {HOMEPAGE_LITERALS.COMPARISON.VISUAL_DESCRIPTION}
               </div>
@@ -217,9 +208,6 @@ export default function ComparisonPage() {
               </div>
               <div className="visual-description">
                 {HOMEPAGE_LITERALS.COMPARISON.METER_DESCRIPTION}
-                <div className="visual-legend">
-                  {legendItems(getGraphData())}
-                </div>
               </div>
             </div>
           </div>

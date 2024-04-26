@@ -2,11 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import './styles/streamGraph.scss';
 
-const StreamGraph = ({ data, width, height }) => {
+const StreamGraph = ({ data, width, height, hoverColor }) => {
   const svgRef = useRef();
   const svgyAxisRef = useRef();
   const svgxAxisLabelRef = useRef();
   const svgyAxisLabelRef = useRef();
+  const tooltipRef = useRef(null);
 
   useEffect(() => {
     if (!data || data.length === 0) return;
@@ -15,6 +16,7 @@ const StreamGraph = ({ data, width, height }) => {
     const svgyAxis = d3.select(svgyAxisRef.current);
     const svgxAxisLabel = d3.select(svgxAxisLabelRef.current);
     const svgyAxisLabel = d3.select(svgyAxisLabelRef.current);
+    const tooltip = d3.select(tooltipRef.current);
     svgyAxis.selectAll('*').remove();
     svgxAxisLabel.selectAll('*').remove();
     svgyAxisLabel.selectAll('*').remove();
@@ -49,6 +51,7 @@ const StreamGraph = ({ data, width, height }) => {
       .attr('fill', '#004D97')
       .attr('d', area(initialData))
       .transition()
+      .attr('class', 'graph-item')
       .duration(1000)
       .delay((d, i) => i * 100)
       .attr('d', area(data));
@@ -61,6 +64,32 @@ const StreamGraph = ({ data, width, height }) => {
       .attr('transform', `translate(${width}, 0)`) // Move the second axis to the right
       .call(yAxis)
       .selectAll('path');
+
+    svgyAxis
+      .selectAll('.tick')
+      .style('opacity', 0)
+      .attr('transform', `translate(0, 0)`)
+      .transition()
+      .duration(100)
+      .delay((d, i) => i * 50)
+      .attr('transform', d => `translate(0, ${yScale(d)})`)
+      .style('opacity', 1);
+
+    tooltip
+      .on('mousemove', event => {
+        const mouseX = event.clientX - svg.node().getBoundingClientRect().left;
+        const x0 = xScale.invert(mouseX);
+        const i = d3.bisectCenter(dates, x0);
+        const dHover = data[i];
+        tooltip
+          .style('opacity', 1)
+          .html(
+            `<div class="graph-tooltip-text">${dHover.key.toShortFormat()}</div>`
+          );
+      })
+      .on('mouseout', () => {
+        tooltip.style('opacity', 0);
+      });
 
     svgxAxisLabel.style('display', 'block');
     svgyAxisLabel.style('display', 'block');
@@ -86,8 +115,39 @@ const StreamGraph = ({ data, width, height }) => {
       <div ref={svgxAxisLabelRef} className="xAxisLabel">
         {'Date'}
       </div>
+      <div
+        ref={tooltipRef}
+        className="graph-tooltip"
+        style={{ opacity: 0, padding: '5px', color: hoverColor }}
+      ></div>
     </div>
   );
 };
 
 export default StreamGraph;
+
+Date.prototype.toShortFormat = function() {
+  const monthNames = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec'
+  ];
+
+  const day = this.getDate();
+
+  const monthIndex = this.getMonth();
+  const monthName = monthNames[monthIndex];
+
+  const year = this.getFullYear();
+
+  return `${day}-${monthName}-${year}`;
+};

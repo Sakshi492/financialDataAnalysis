@@ -380,7 +380,12 @@ export default function TradingVolumePage() {
         </div>
         <div className="trading-visual">
           <div className="trading-volume-graph">
-            <StreamGraph data={tradingData} width={400} height={400} />
+            <StreamGraph
+              data={tradingData}
+              width={400}
+              height={400}
+              hoverColor={'#ffe7d0'}
+            />
           </div>
           <div className="trading-control-description">
             <div className="trading-visual-header">

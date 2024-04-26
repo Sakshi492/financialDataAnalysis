@@ -78,25 +78,54 @@ const HOMEPAGE_LITERALS = {
     {
       header: 'Data Sources Used in this Project:',
       points: [
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1'
+        {
+          content: 'Source for historical data of Dow Jones Stocks : ',
+          resource:
+            'https://www.kaggle.com/datasets/timoboz/stock-data-dow-jones/data'
+        },
+        {
+          content: 'Source for Net Income data : ',
+          resource:
+            'https://www.macrotrends.net/stocks/charts/AAPL/apple/net-profit-margin'
+        },
+        {
+          content: 'Source for investigated Company specific news : ',
+          resource:
+            'https://www.nytimes.com/2015/08/05/business/media/disney-earnings-3q.html'
+        },
+        {
+          content: 'Source for colour blindness data: ',
+          resource:
+            'https://www.healthline.com/health/deuteranopia#:~:text=Research%2C%20including%20a%202018%20study%20of%20825%20undergraduate,women%2C%20according%20to%20the%20UK%20National%20Health%20Service.'
+        }
       ]
     },
     {
       header: 'References used in Source Code:',
       points: [
-        'Code source for Bubble Chart (Trading Volume) : https://d3-graph-gallery.com/graph/barplot_button_data_hard.html',
-        'Code source for Stream Graph (Trading Volume - Percentage Change) : https://d3-graph-gallery.com/streamgraph.html',
-        'Code source for Line Graph (Correlation & Data Analysis) : https://d3-graph-gallery.com/graph/line_basic.html',
-        'Code source for Bar Graph (Net Income) : https://d3-graph-gallery.com/barplot.html',
-        'Code source for Scale Linear (Correlation Meter) : https://d3js.org/d3-scale/linear'
+        {
+          content: 'Code source for Bubble Chart (Trading Volume) : ',
+          resource:
+            'https://d3-graph-gallery.com/graph/barplot_button_data_hard.html'
+        },
+        {
+          content:
+            'Code source for Stream Graph (Trading Volume - Percentage Change) : ',
+          resource: 'https://d3-graph-gallery.com/streamgraph.html'
+        },
+        {
+          content:
+            'Code source for Line Graph (Correlation & Data Analysis) : ',
+          resource: 'https://d3-graph-gallery.com/graph/line_basic.html'
+        },
+        {
+          content: 'Code source for Bar Graph (Net Income) : ',
+          resource: 'https://d3-graph-gallery.com/barplot.html'
+        },
+        {
+          content: 'Code source for Scale Linear (Correlation Meter) : ',
+          resource: 'https://d3js.org/d3-scale/linear'
+        }
       ]
     },
     {

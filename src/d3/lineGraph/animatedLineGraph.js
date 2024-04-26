@@ -111,6 +111,27 @@ const AnimatedLineGraph = ({
           .duration(2000)
           .style('transition-timing-function', 'cubic-bezier(.57,.21,.69,1.25)')
           .attr('stroke-dashoffset', 0);
+
+        // Animate ticks in y-axis
+        svgyAxis
+          .selectAll('.tick')
+          .style('opacity', 0)
+          .attr('transform', `translate(0, 0)`)
+          .transition()
+          .duration(100)
+          .delay((d, i) => i * 50)
+          .attr('transform', d => `translate(0, ${yScale(d)})`)
+          .style('opacity', 1);
+
+        svgxAxis
+          .selectAll('.tick')
+          .style('opacity', 0)
+          .attr('transform', `translate(0, 0)`)
+          .transition()
+          .duration(100)
+          .delay((d, i) => i * 50)
+          .attr('transform', d => `translate(${xScale(d)},0)`)
+          .style('opacity', 1);
       });
     }
   }, [data]);

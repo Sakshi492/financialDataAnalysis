@@ -25,7 +25,12 @@ export default function AcknowledgementPage() {
                   className="content-point"
                   key={`acknowledgement-${i}-point-${j}`}
                 >
-                  {`${j + 1}. ${point}`}
+                  {`${j + 1}. ${point.content}`}
+                  {point.resource && (
+                    <a href={point.resource} target="_blank" className="link">
+                      {point.resource}
+                    </a>
+                  )}
                 </div>
               );
             })}

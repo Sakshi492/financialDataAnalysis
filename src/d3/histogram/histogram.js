@@ -77,6 +77,16 @@ const Histogram = ({ data, givenWidth, givenHeight, xLabel, yLabel }) => {
         .delay((d, i) => (datapoints.length - i) * 100) // Add delay for staggered animation
         .attr('y', d => yScale(d.value))
         .attr('height', d => height - yScale(d.value));
+
+      svgyAxis
+        .selectAll('.tick')
+        .style('opacity', 0)
+        .attr('transform', `translate(0, 0)`)
+        .transition()
+        .duration(100)
+        .delay((d, i) => i * 50)
+        .attr('transform', d => `translate(0, ${yScale(d)})`)
+        .style('opacity', 1);
     }
   }, [data]);
 

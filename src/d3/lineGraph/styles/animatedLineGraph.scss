@@ -32,6 +32,9 @@
     color: $color-beige;
     .svg-y-axis {
       transform: translate(10%, -1%);
+      .tick {
+        transition-timing-function: cubic-bezier(0.57, 0.21, 0.69, 1.25);
+      }
     }
   }
   .xAxisLabel {
