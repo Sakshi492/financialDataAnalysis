@@ -107,9 +107,9 @@ const BubbleChart = ({
         tooltip
           .style('opacity', 0.9)
           .html(
-            `<div>${getToolTipLabel(d.data.key)}</div><div>Trading Volume: ${
-              d.data.volume
-            }</div>`
+            `<div>${getToolTipLabel(
+              d.data.key
+            )}</div><div>Trading Volume: ${d.data.volume.formatCurrency()}</div>`
           );
       })
       .on('mouseout', function(event, d) {
@@ -129,9 +129,9 @@ const BubbleChart = ({
         tooltip
           .style('opacity', 0.9)
           .html(
-            `<div>${getToolTipLabel(d.data.key)}</div><div>Trading Volume: ${
-              d.data.volume
-            }</div>`
+            `<div>${getToolTipLabel(
+              d.data.key
+            )}</div><div>Trading Volume: ${formatCurrency(d.data.volume)}</div>`
           );
       })
       .on('mouseout', function(event, d) {
@@ -159,6 +159,22 @@ export default BubbleChart;
 const getToolTipLabel = label => {
   if (label instanceof Date) return `Day of Date : ${label.toShortFormat()}`;
   else return `Chosen period - ${label}`;
+};
+
+const formatCurrency = (amountString, currency = 'USD') => {
+  // Convert the string to a number
+  const amount = parseFloat(amountString);
+  // Check if the number is valid
+  if (!isNaN(amount)) {
+    // Use toLocaleString to format the number as currency with commas
+    return amount.toLocaleString('en-US', {
+      style: 'currency',
+      currency: currency
+    });
+  } else {
+    // If the input is not a valid number, return the original string
+    return amountString;
+  }
 };
 
 Date.prototype.toShortFormat = function() {
