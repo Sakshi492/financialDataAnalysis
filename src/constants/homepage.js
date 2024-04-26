@@ -129,31 +129,20 @@ const HOMEPAGE_LITERALS = {
       ]
     },
     {
-      header: 'Data Processing : Financial Dataset',
+      header: 'Data Processing',
       points: [
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1'
-      ]
-    },
-    {
-      header: 'Data Processing : Net Revenue Dataset',
-      points: [
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1',
-        'Point 1'
+        {
+          content:
+            'The closing price of all 30 stocks were collated into one sheet with the date on column 1 and the respective stock prices on the following 30 columns.',
+          content:
+            'The trading volume of all 30 stocks were collated into one sheet with the date on column 1 and the respective trading volumes on the following 30 columns.',
+          content:
+            'Calculated the average of closing prices of all the 30 stocks',
+          content:
+            'S&P Global data’s time period was matched to that of other stocks',
+          content:
+            'Since the timescales were different, processing was done to bring them onto a common ground. Common dates (quarters) were chosen between stock price and net income, 1ST April 2014- 1st April 2019 (Question 3).'
+        }
       ]
     }
   ]
